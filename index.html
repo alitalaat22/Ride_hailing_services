@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Details Dashboard</title>
+    <!-- Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js for traffic visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased text-gray-800 flex justify-center min-h-screen">
+
+    <main class="app-container">
+
+        <!-- Map Header -->
+        <header class="map-wrapper shrink-0">
+            <canvas id="routeCanvas"></canvas>
+            <div class="header-overlay">
+                <button class="nav-btn" onclick="uiAction('Back')">←</button>
+                <span class="header-title">Trip Details</span>
+                <button class="nav-btn" onclick="uiAction('Help')">?</button>
+            </div>
+        </header>
+
+        <!-- Bottom Sheet Content -->
+        <div class="content-sheet">
+            <div class="drag-handle"></div>
+
+            <div class="px-6 space-y-7">
+
+                <!-- Client Profile -->
+                <section class="profile-card">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="avatar">👨🏻</div>
+                            <div class="status-indicator"></div>
+                        </div>
+                        <div>
+                            <h2 class="font-bold text-gray-900">Joseph Nasser</h2>
+                            <div class="flex items-center gap-1 mt-0.5">
+                                <span class="text-yellow-500 text-xs">★</span>
+                                <span class="text-sm font-bold">4.9</span>
+                                <span class="badge-gold">Gold Member</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <a href="tel:123" class="action-circle">📞</a>
+                        <button onclick="uiAction('Chat')" class="action-circle">💬</button>
+                    </div>
+                </section>
+
+                <!-- Trip Path -->
+                <section class="relative px-1">
+                    <div class="route-line-vertical"></div>
+                    <div class="space-y-8">
+                        <div class="path-step">
+                            <div class="dot dot-pickup"></div>
+                            <div>
+                                <p class="step-label">Pickup</p>
+                                <p class="step-address">Nozha 2, Street 15, Cairo Gov.</p>
+                            </div>
+                        </div>
+                        <div class="path-step">
+                            <div class="dot dot-dest"></div>
+                            <div>
+                                <p class="step-label">Destination</p>
+                                <p class="step-address">City Stars Mall, Nasr City</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Metrics Grid -->
+                <section class="grid grid-cols-3 gap-3">
+                    <div class="metric-card bg-blue-50/40">
+                        <span class="block text-xl mb-1">📏</span>
+                        <p class="metric-label">Distance</p>
+                        <p class="metric-value">12.5 km</p>
+                    </div>
+                    <div class="metric-card bg-purple-50/40">
+                        <span class="block text-xl mb-1">⏱️</span>
+                        <p class="metric-label">Duration</p>
+                        <p class="metric-value">25 min</p>
+                    </div>
+                    <div class="metric-card bg-amber-50/40">
+                        <span class="block text-xl mb-1">🕒</span>
+                        <p class="metric-label">Time</p>
+                        <p class="metric-value">08:30 PM</p>
+                    </div>
+                </section>
+
+                <!-- Analytics -->
+                <section class="chart-wrapper">
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <h3 class="font-bold text-sm text-gray-900">Traffic Density</h3>
+                            <p class="text-[10px] text-gray-400">Live forecast for your route</p>
+                        </div>
+                        <span class="live-tag">● LIVE</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="trafficChart"></canvas>
+                    </div>
+                </section>
+
+                <!-- Order Details -->
+                <section class="order-section">
+                    <div class="order-row">
+                        <div class="flex items-center gap-3">
+                            <span class="text-3xl">🚗</span>
+                            <div>
+                                <p class="step-label">Vehicle</p>
+                                <p class="text-sm font-bold">MG5 - Standard</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="step-label">Pass.</p>
+                            <p class="text-sm font-bold">👥 4 Max</p>
+                        </div>
+                    </div>
+
+                    <div class="p-5 bg-white border-b border-gray-100">
+                        <p class="step-label mb-3">Payment Method</p>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="setPayment('cash')" id="pay-cash" class="pay-btn active"><span>💵</span>
+                                Cash</button>
+                            <button onclick="setPayment('visa')" id="pay-visa" class="pay-btn"><span>💳</span>
+                                Visa</button>
+                            <button onclick="setPayment('wallet')" id="pay-wallet" class="pay-btn"><span>📱</span>
+                                Wallet</button>
+                        </div>
+                    </div>
+
+                    <div class="p-5 bg-white border-b border-gray-100">
+                        <div class="flex gap-2">
+                            <input type="text" id="promoIn" placeholder="Promo Code (SAVE20)" class="promo-input">
+                            <button onclick="applyPromo()" class="apply-btn">Apply</button>
+                        </div>
+                    </div>
+
+                    <div class="p-5 flex justify-between items-center bg-gray-50">
+                        <div>
+                            <p class="step-label">Total Fare</p>
+                            <p class="text-[10px] text-gray-500" id="paymentHint">Pay cash to driver</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="price-text" id="priceDisplay">150 <span class="currency">EGP</span></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Sticky Footer -->
+        <footer class="app-footer">
+            <button onclick="uiAction('Cancel')" class="footer-btn-cancel">Cancel</button>
+            <button onclick="uiAction('Confirm')" class="footer-btn-confirm">Confirm Order</button>
+        </footer>
+
+        <!-- Modal -->
+        <div id="modalOverlay" class="modal-overlay">
+            <div class="modal-box" id="modalBox">
+                <div id="modalIcon" class="text-5xl text-center mb-4">🔔</div>
+                <h3 class="modal-title" id="modalTitle">Notice</h3>
+                <p class="modal-message" id="modalMsg">Details updated.</p>
+                <button onclick="closeModal()" class="modal-close-btn">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
