@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber</title>
+    <!-- Bootstrap 5 + icons + theme (light) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- keep for some icons -->
+    <!-- Google Font (optional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Carrois+Gothic&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ==================== HEADER / NAVBAR (BOOTSTRAP) ==================== -->
+    <header>
+        <!-- navbar-dark because background is dark -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1e4a5f;">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <span>Uber</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                    aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Carpool</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Bus</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                More
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                                <li><a class="dropdown-item" href="#">FAQ</a></li>
+                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                <li><a class="dropdown-item" href="#">Blog</a></li>
+                                <li><a class="dropdown-item" href="#">Careers</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-3">
+                        <!-- language dropdown -->
+                        <div class="dropdown">
+                            <button class="btn btn-link text-white text-decoration-none dropdown-toggle p-0"
+                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-earth-africa"></i> EN
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item active" href="#">English (EN)</a></li>
+                                <li><a class="dropdown-item" href="#">العربية (AR)</a></li>
+                            </ul>
+                        </div>
+                        <div class="login-signin">
+                            <a href="#" class="text-white me-2">Log In</a>
+                            <a href="#" class="text-white btn btn-outline-light btn-sm px-3 rounded-pill signup">Sign
+                                Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- ==================== MAIN CONTAINER ==================== -->
+    <main class="container py-4">
+        <!-- available cars (grid) -->
+        <div class="available-cars card p-4 mb-5 border-0 shadow-sm">
+            <h3 class="mb-4">Choose Your Ride</h3>
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="card car-card h-100 border-0 shadow-sm">
+                        <a href="#home" class="text-decoration-none text-black">
+                            <img src="assets/1.jpg" class="card-img-top" alt="Economy">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Economy</h5>
+                                <p class="card-text small">Affordable everyday rides</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card car-card h-100 border-0 shadow-sm">
+                        <a href="#home" class="text-decoration-none text-black">
+                            <img src="assets/2.jpg" class="card-img-top" alt="Comfort">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Comfort</h5>
+                                <p class="card-text small">More space & smooth ride</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card car-card h-100 border-0 shadow-sm">
+                        <a href="#home" class="text-decoration-none text-black">
+                            <img src="assets/3.jpg" class="card-img-top" alt="Luxury">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Luxury</h5>
+                                <p class="card-text small">Premium experience</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="card car-card h-100 border-0 shadow-sm">
+                        <a href="#home" class="text-decoration-none text-black">
+                            <img src="assets/image.jpg" class="card-img-top" alt="Electric">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Electric</h5>
+                                <p class="card-text small">Eco-friendly ride</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero section with rental form (2 rows then column) -->
+        <section class="hero-section my-5" id="home">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold hero-title">Find your perfect <span
+                            class="d-inline-block px-3 py-1 bg-soft-green rounded-pill">ride</span></h1>
+                    <p class="lead text-secondary">Save money, meet people, and reduce your carbon footprint</p>
+                </div>
+                <div class="col-lg-6">
+                    <!-- rental card -->
+                    <div class="rental-card p-4">
+                        <div class="d-flex align-items-center gap-2 mb-4">
+                            <i class="fas fa-car fs-4 text-brand"></i>
+                            <h4 class="mb-0">Car Rental</h4>
+                        </div>
+                        <form id="rentalForm" action="payment.html">
+                            <!-- row 2 cols: departure + return-location -->
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold"><i class="fas fa-map-pin me-1"></i>
+                                        Departure</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-white"><i
+                                                class="fas fa-location-dot"></i></span>
+                                        <input type="text" class="form-control" value="Dubai"
+                                            placeholder="City, airport...">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold"><i class="fas fa-rotate-left me-1"></i> Return
+                                        Location</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-white"><i
+                                                class="fas fa-location-dot"></i></span>
+                                        <input type="text" class="form-control" value="Abu Dhabi"
+                                            placeholder="City, airport...">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row 2 cols: pickup + return date -->
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold"><i class="far fa-calendar-alt me-1"></i> Pick
+                                        Up Date & Time</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-white"><i class="far fa-clock"></i></span>
+                                        <input type="text" class="form-control" value="14 Jan 2024 | 10:30 AM">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold"><i class="far fa-calendar-alt me-1"></i>
+                                        Return Date & Time</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-white"><i class="far fa-clock"></i></span>
+                                        <input type="text" class="form-control" value="19 Jan 2024 | 04:30 AM">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- full width filter row -->
+                            <div class="row mb-4">
+                                <div class="col-12">
+                                    <div class="d-flex flex-wrap align-items-center bg-light p-3 rounded-4">
+                                        <span class="filter-label me-4"><i
+                                                class="fas fa-sliders-h me-2"></i>Filter:</span>
+                                        <div class="radio-group">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="driver"
+                                                    id="withoutDriver" value="without" checked>
+                                                <label class="form-check-label" for="withoutDriver">Without
+                                                    Driver</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="driver"
+                                                    id="withDriver" value="with">
+                                                <label class="form-check-label" for="withDriver">With Driver</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <!-- search btn -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-brand btn-lg rounded-pill"><i
+                                        class="fas fa-search me-2"></i>Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works (Abanop) using bootstrap grid -->
+        <section class="all my-5" id="how-it-works">
+            <div class="row mb-4">
+                <div class="col-lg-8">
+                    <h1>How It <span class="text-brand">Works</span></h1>
+                    <p class="lead">Drivers post their trips, passengers find rides, and together they split costs.
+                        Search for available journeys, connect with drivers or passengers, and hit the road. It's
+                        affordable, convenient, and eco-friendly!</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 bg-soft-green p-4 h-100">
+                        <h2 class="h4">Your pick of rides at low prices.</h2>
+                        <p>No matter where you're going, by bus or carpool, find the perfect ride from our wide range of
+                            destinations and routes at low prices.</p>
+                        <a href="#" class="text-decoration-none fw-semibold">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 bg-soft-green p-4 h-100">
+                        <h2 class="h4">Trust who you travel with.</h2>
+                        <p>We take the time to get to know each of our members and bus partners. We check reviews,
+                            profiles and IDs, so you know who you're travelling with and can book.</p>
+                        <a href="#" class="text-decoration-none fw-semibold">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 bg-soft-green p-4 h-100">
+                        <h2 class="h4">Scroll, click, tap and go!</h2>
+                        <p>We take the time to get to know each of our members and bus partners. We check reviews,
+                            profiles and IDs, so you know who you're travelling with and can book.</p>
+                        <a href="#" class="text-decoration-none fw-semibold">Read More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carpool section -->
+        <section class="carpool my-5" id="carpool">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6">
+                    <img src="assets/car.jpg" alt="Car" class="img-fluid rounded-4 shadow">
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <h1 class="fw-bold">Enjoy <span class="text-brand">€25</span> carpool bonus <br> for sharing
+                            your ride!</h1>
+                        <p class="text-secondary">Drivers, great news: your good habits are being rewarded! Benefit from
+                            the Carpool Bonus by carpooling.</p>
+                    </div>
+                    <div class="row g-4 mb-4">
+                        <div class="col-sm-6">
+                            <div class="d-flex gap-3">
+                                <i class="fa-solid fa-car fs-1 text-brand"></i>
+                                <div>
+                                    <h5>Earn €25 in Carpool Rewards!</h5>
+                                    <p class="small">Enjoy a bonus when you carpool. Check eligibility and start earning
+                                        today.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex gap-3">
+                                <i class="fa-solid fa-gift fs-1 text-brand"></i>
+                                <div>
+                                    <h5>Get Rewarded with Carpool Bonuses</h5>
+                                    <p class="small">You can earn €25 bonus just by sharing your ride. Terms apply.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline-brand rounded-pill px-5 py-2 border-2 fw-semibold"
+                        style="border-color:#1e4a5f; color:#1e4a5f;">Learn more</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Rides Section (Plan your next ride) -->
+        <section class="hero my-5" id="rides">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <h1 class="fw-bold mb-4"><span class="text-brand">Plan Your Next Ride</span> —<br>where do you want
+                        to go?</h1>
+                    <div class="ride-box active">
+                        <span>London → Manchester</span>
+                        <button class="text-white"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <div class="ride-box">
+                        <span>Manchester → London</span>
+                        <button><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <div class="ride-box">
+                        <span>Birmingham → London</span>
+                        <button><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <button class="btn btn-brand rounded-pill mt-3">See our most popular rides</button>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card p-4 border-0 shadow">
+                        <h3 class="mb-3">Car Type</h3>
+                        <div class="row g-3">
+                            <div class="col-3">
+                                <img src="assets/1.jpg" class="img-fluid rounded-3" alt="Sedan">
+                                <p class="mt-1 fw-semibold">Sedan</p>
+                            </div>
+                            <div class="col-3">
+                                <img src="assets/2.jpg" class="img-fluid rounded-3" alt="SUV">
+                                <p class="mt-1 fw-semibold">SUV</p>
+                            </div>
+                            <div class="col-3">
+                                <img src="assets/3.jpg" class="img-fluid rounded-3" alt="Sport">
+                                <p class="mt-1 fw-semibold">Sport</p>
+                            </div>
+                            <div class="col-3">
+                                <img src="assets/image.jpg" class="img-fluid rounded-3" alt="Electric">
+                                <p class="mt-1 fw-semibold">Electric</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destinations Section -->
+        <section class="destinations my-5" id="destinations">
+            <div class="row align-items-center mb-4">
+                <div class="col-md-6">
+                    <h1 class="fw-bold">Discover our top <br><span class="text-brand">Bus Destinations</span> <br>for
+                        you.</h1>
+                </div>
+                <div class="col-md-6">
+                    <p>Discover popular routes to cities and towns across the country with our top bus destinations.
+                        Whether it's a weekend getaway or a daily commute, we offer comfortable and affordable travel
+                        options to suit your needs.</p>
+                    <button class="btn btn-outline-brand rounded-pill px-4">See more</button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mt-3">
+                <span class="route-item active">Bus Brussels → Paris <i class="fas fa-arrow-right"></i></span>
+                <span class="route-item">Bus Amsterdam → Paris <i class="fas fa-arrow-right"></i></span>
+                <span class="route-item">Bus Paris → Barcelona <i class="fas fa-arrow-right"></i></span>
+                <span class="route-item">Bus Paris → Milan <i class="fas fa-arrow-right"></i></span>
+                <span class="route-item">Bus Lyon → Grenoble <i class="fas fa-arrow-right"></i></span>
+                <span class="route-item">Bus Lille → Paris <i class="fas fa-arrow-right"></i></span>
+                <span class="route-item">Bus Paris → Toulouse <i class="fas fa-arrow-right"></i></span>
+                <span class="route-item">Bus Paris → Amsterdam <i class="fas fa-arrow-right"></i></span>
+                <span class="route-item">Bus Lyon → Grenoble <i class="fas fa-arrow-right"></i></span>
+                <span class="route-item">Bus Grenoble → Lyon <i class="fas fa-arrow-right"></i></span>
+                <span class="route-item">Bus Lyon → Chamonix <i class="fas fa-arrow-right"></i></span>
+                <span class="route-item fw-bold" style="background:#e2f0ed;">All bus destinations <i
+                        class="fas fa-arrow-right"></i></span>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER (BOOTSTRAP) ==================== -->
+    <footer class="footer pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-3">
+                    <h5 class="text-white">About Drive</h5>
+                    <p class="small">Leading smart transportation platform, providing safe and comfortable rides at
+                        competitive prices.</p>
+                    <div>
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">i</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-white">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-secondary text-decoration-none">Home</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Services</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Features</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">App</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-white">Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-secondary text-decoration-none">Contact Us</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-white">Contact Info</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li>📞 +1 234 567 890</li>
+                        <li>✉️ support@drive.com</li>
+                        <li>📍 New York, NY</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="text-center small text-secondary">&copy; 2024 Drive. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (for dropdowns, toggles etc) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
