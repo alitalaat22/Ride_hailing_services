@@ -3,56 +3,6 @@ body {
     background-color: #f8fafc;
 }
 
-.navbar-brand img {
-    height: 40px;
-    width: auto;
-}
-
-.dropdown-menu li a {
-    text-decoration: none;
-}
-
-.rental-card {
-    background: white;
-    border-radius: 1.5rem;
-    box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1);
-}
-
-.car-card {
-    transition: transform 0.2s;
-}
-
-.car-card:hover {
-    transform: translateY(-5px);
-}
-
-.footer {
-    background-color: #0b2b3c;
-    color: #ddd;
-}
-
-.footer a {
-    color: #bbb;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    color: white;
-}
-
-.social-link {
-    background: #1e4a5f;
-    width: 36px;
-    height: 36px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: white;
-    margin-right: 8px;
-    font-weight: bold;
-}
-
 .bg-soft-green {
     background-color: #e8f3ed;
 }
@@ -155,33 +105,27 @@ body {
     border-radius: 20px;
 }
 
-/* navbar tweaks */
-.navbar {
-    background-color: #1e4a5f !important;
-    padding-block: 0.75rem;
-}
-
-.navbar .nav-link,
-.navbar .navbar-brand,
-.navbar i {
-    color: white !important;
-}
-
-.dropdown-menu {
-    background: white;
-    border-radius: 1rem;
-    margin-top: 0.5rem;
-}
-
-.lang-menu {
+/* .lang-menu {
     min-width: 160px;
-}
+} */
 
 .login-signin a {
     color: white;
     text-decoration: none;
     font-weight: 500;
     margin: 0 0.5rem;
+}
+
+.rental-card {
+    background-color: white;
+    border-radius: 10px;
+     box-shadow: 0 4px 12px rgba(30, 74, 95, 0.15);
+}
+.car-card-hover {
+    transition: all 200ms ease-in-out;
+}
+.car-card-hover:hover {
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* hero image behind header? we replicate car-header as a bg */
