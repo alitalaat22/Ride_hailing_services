@@ -1,0 +1,185 @@
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f5f9fc;
+    color: #1e2b37;
+}
+
+.navbar {
+    background-color: #1e4a5f !important;
+    box-shadow: 0 4px 12px rgba(0, 20, 10, 0.08);
+}
+
+.navbar-brand img {
+    height: 42px;
+    filter: brightness(0) invert(1);
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    color: white !important;
+    font-weight: 500;
+}
+
+.btn-primary-custom {
+    background-color: #1e4a5f;
+    color: white;
+    border-radius: 60px;
+    padding: 0.7rem 2.5rem;
+    font-weight: 600;
+    border: none;
+    transition: 0.2s;
+}
+
+.btn-primary-custom:hover {
+    background-color: #0f3b4a;
+    color: white;
+}
+
+.btn-outline-custom {
+    border: 2px solid #1e4a5f;
+    color: #1e4a5f;
+    border-radius: 60px;
+    padding: 0.5rem 2rem;
+    font-weight: 600;
+    background: transparent;
+}
+
+.btn-outline-custom:hover {
+    background-color: #1e4a5f;
+    color: white;
+}
+
+.text-brand {
+    color: #1e4a5f !important;
+}
+
+.bg-soft-mint {
+    background-color: #e2f0ed;
+    /* same light teal */
+}
+
+.booking-card {
+    background: white;
+    border-radius: 2rem;
+    box-shadow: 0 20px 40px -12px rgba(30, 74, 95, 0.2);
+    border: 1px solid rgba(30, 74, 95, 0.15);
+    overflow: hidden;
+}
+
+.booking-header {
+    background: linear-gradient(135deg, #1e4a5f 0%, #2c6b84 100%);
+    color: white;
+    padding: 1.8rem 2rem;
+}
+
+.section-title {
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.8rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: #1e4a5f;
+    border-radius: 5px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #dee2e6;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.price-tag {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e4a5f;
+}
+
+.payment-method-card {
+    border: 2px solid #e9ecef;
+    border-radius: 1.5rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    cursor: default;
+    transition: 0.2s;
+    height: 100%;
+}
+
+.payment-method-card.active {
+    border-color: #1e4a5f;
+    background-color: #e2f0ed;
+}
+
+.payment-method-card i {
+    font-size: 2.5rem;
+    color: #1e4a5f;
+    margin-bottom: 0.8rem;
+}
+
+.form-control,
+.form-select {
+    border-radius: 60px;
+    padding: 0.75rem 1.5rem;
+    border: 1.5px solid #dee7e5;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #1e4a5f;
+    box-shadow: 0 0 0 0.25rem rgba(30, 74, 95, 0.25);
+}
+
+.input-group-text {
+    border-radius: 0 60px 60px 0;
+    background-color: white;
+    border: 1.5px solid #dee7e5;
+    border-right: none;
+}
+
+.input-group .form-control {
+    border-radius: 60px 0 0 60px;
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(to right, transparent, #1e4a5f40, transparent);
+    margin: 2rem 0;
+}
+
+.footer {
+    background-color: #0b2b3c;
+    color: #ccdde5;
+}
+
+.footer a {
+    color: #bbd4dd;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.social-link {
+    background-color: #1e4f63;
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    margin-right: 0.5rem;
+}
