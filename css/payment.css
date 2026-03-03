@@ -4,20 +4,9 @@ body {
     color: #1e2b37;
 }
 
-.navbar {
-    background-color: #1e4a5f !important;
-    box-shadow: 0 4px 12px rgba(0, 20, 10, 0.08);
-}
-
 .navbar-brand img {
     height: 42px;
     filter: brightness(0) invert(1);
-}
-
-.navbar .nav-link,
-.navbar .navbar-brand {
-    color: white !important;
-    font-weight: 500;
 }
 
 .btn-primary-custom {
@@ -156,30 +145,4 @@ body {
     height: 2px;
     background: linear-gradient(to right, transparent, #1e4a5f40, transparent);
     margin: 2rem 0;
-}
-
-.footer {
-    background-color: #0b2b3c;
-    color: #ccdde5;
-}
-
-.footer a {
-    color: #bbd4dd;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    color: white;
-}
-
-.social-link {
-    background-color: #1e4f63;
-    width: 38px;
-    height: 38px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: white;
-    margin-right: 0.5rem;
 }

@@ -1,0 +1,222 @@
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f8fafc;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+}
+
+
+.dropdown-menu li a {
+    text-decoration: none;
+}
+
+.rental-card {
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.1);
+}
+
+.car-card {
+    transition: transform 0.2s;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+}
+
+.footer {
+    background-color: #0b2b3c;
+    color: #ddd;
+}
+
+.footer a {
+    color: #bbb;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.social-link {
+    background: #1e4a5f;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.bg-soft-green {
+    background-color: #e8f3ed;
+}
+
+.text-brand {
+    color: #1e4a5f;
+}
+
+.btn-brand {
+    background-color: #1e4a5f;
+    color: white;
+    border-radius: 40px;
+    padding: 0.5rem 2rem;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-brand:hover {
+    background-color: #0f2f3b;
+    color: white;
+}
+
+.hero-title span {
+    color: #1e4a5f;
+    background: #e2f0e9;
+    padding: 0 0.5rem;
+    border-radius: 40px;
+}
+
+.divider {
+    height: 1px;
+    background: #dee2e6;
+    margin: 1.5rem 0;
+}
+
+.radio-group .form-check {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.filter-label {
+    font-weight: 600;
+    margin-right: 1.5rem;
+    color: #1e4a5f;
+}
+
+/* ride boxes */
+.ride-box {
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 60px;
+    padding: 0.7rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: default;
+}
+
+.ride-box.active {
+    background-color: #1e4a5f;
+    color: white;
+    border: none;
+}
+
+.ride-box.active button {
+    color: white;
+}
+
+.ride-box button {
+    background: none;
+    border: none;
+}
+
+/* destinations route blocks */
+.route-item {
+    background: white;
+    padding: 0.75rem 1.2rem;
+    border-radius: 40px;
+    border: 1px solid #e9ecef;
+    display: inline-block;
+    margin: 0.5rem;
+    transition: 0.1s;
+}
+
+.route-item.active {
+    background: #1e4a5f;
+    color: white;
+    border-color: #1e4a5f;
+}
+
+.route-item i {
+    margin-left: 8px;
+}
+
+.type-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* navbar tweaks */
+.navbar {
+    background-color: #1e4a5f !important;
+    padding-block: 0.75rem;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar i {
+    color: white !important;
+}
+
+.dropdown-menu {
+    background: white;
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+}
+
+.lang-menu {
+    min-width: 160px;
+}
+
+.login-signin a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 0.5rem;
+}
+
+/* hero image behind header? we replicate car-header as a bg */
+.car-header {
+    background: url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200') center/cover;
+    height: 300px;
+    width: 100%;
+}
+
+/* placeholder for missing images: using unsplash alternatives */
+.available-cards img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.card.car-card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.carpool-image img {
+    max-width: 100%;
+    border-radius: 2rem;
+}
+
+.signup:hover {
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .car-header {
+        height: 180px;
+    }
+}
